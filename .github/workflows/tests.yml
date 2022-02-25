@@ -25,7 +25,7 @@ jobs:
           yarn --mutex network --frozen-lockfile
       - name: Lint
         run: |
-          yarn lint:check
-      - name: Format
+          yarn lint
+      - name: Test
         run: |
-          yarn format:check
+          yarn test:ci

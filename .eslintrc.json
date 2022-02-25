@@ -11,8 +11,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -23,13 +23,29 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "jest"],
   "overrides": [
     {
       "files": ["*.tsx"],
       "rules": {
         // The lower one is not working as expected and wants a key for any jsx element. That's not normal but i do not have enough time to investigate.
         "react/jsx-key": "off"
+      }
+    },
+    {
+      "files": ["*.test.*"],
+      "env": {
+        "jest/globals": true
+      },
+      "rules": {
+        // The lower one is not working as expected and wants a key for any jsx element. That's not normal but i do not have enough time to investigate.
+        "react/jsx-key": "off"
+      }
+    },
+    {
+      "files": ["*.js"],
+      "env": {
+        "node": true
       }
     }
   ]
