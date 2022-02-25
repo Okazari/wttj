@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - dev
+      - master
+jobs:
+  Tests:
+    timeout-minutes: 7
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - uses: actions/cache@v2
+        with:
+          path: .yarncache
+          key: ${{ runner.os }}-yarncache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarncache-
+      - name: Set up dependencies
+        env:
+          YARN_CACHE_FOLDER: ${{ github.workspace }}/.yarncache
+        run: |
+          yarn --mutex network --frozen-lockfile
+      - name: Lint
+        run: |
+          yarn lint:check
