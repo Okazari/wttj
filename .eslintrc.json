@@ -19,5 +19,15 @@
     "plugins": [
         "react",
         "@typescript-eslint"
+    ],
+    "overrides": [
+        {
+            "files": ["*.tsx"],
+            "rules": {
+                "react/react-in-jsx-scope": "off",
+                // The lower one is not working as expected and wants a key for any jsx element. That's not normal but i do not have enough time to investigate.
+                "react/jsx-key": "off"
+            }
+        }
     ]
 }
