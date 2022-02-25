@@ -1,34 +1,36 @@
-import { createTheme, WuiProvider } from "@welcome-ui/core";
-import { InputText } from "@welcome-ui/input-text";
-import { Box } from "@welcome-ui/box";
-import { Field } from "@welcome-ui/field";
-import { FC } from "react";
-import { SearchIcon } from "@welcome-ui/icons.search";
-import { Stack } from "@welcome-ui/stack";
-const theme = createTheme();
+import { useJobs } from "core/jobs";
+import { Box, Field, WuiProvider, theme, SearchInput } from "core/ui";
+import PageContent from "core/ui/PageContent";
+import { FunctionComponent } from "react";
+import JobList from "./JobList";
 
-const AppContainer: FC = ({ children }) => (
+const AppContainer: FunctionComponent = ({ children }) => (
   <Box
     display="grid"
     gridTemplateRows="min-content 1fr"
     padding="xxl"
     h="100vh"
   >
-    <Stack spacing="md">{children}</Stack>
+    {children}
   </Box>
 );
 
 const App = () => {
+  const { query, setQuery, jobs, loading } = useJobs();
   return (
     <WuiProvider theme={theme}>
       <AppContainer>
         <Field label="Your dream job ?">
-          <InputText
-            aria-label="search for your dream job"
-            icon={<SearchIcon />}
-            isClearable
+          <SearchInput
+            ariaLabel="search for your dream job"
+            onChange={setQuery}
+            value={query}
+            placeholder="Operations & Strategy, Communications Manager..."
           />
         </Field>
+        <PageContent loading={loading}>
+          <JobList jobs={jobs} />
+        </PageContent>
       </AppContainer>
     </WuiProvider>
   );
