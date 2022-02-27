@@ -19,14 +19,20 @@ describe("App", () => {
 
   describe("when app is loaded", () => {
     let jobList: HTMLElement;
+    let groupResults: HTMLElement;
+    let jobsGroup: Array<HTMLElement>;
     let jobs: Array<HTMLElement>;
+
     beforeEach(async () => {
       await waitForElementToBeRemoved(() => screen.getByRole("status"));
-      jobList = screen.getByTestId("job-list");
+      jobList = screen.getByTestId("grouped-job-list");
+      jobsGroup = within(jobList).getAllByTestId("job-group");
       jobs = within(jobList).getAllByRole("section");
+      groupResults = screen.getByRole("combobox");
     });
-    it("should show a list of jobs", () => {
-      expect(jobs).toHaveLength(3);
+
+    it("should show a list of department", () => {
+      expect(jobsGroup).toHaveLength(2);
     });
 
     it("should show jobs' names", () => {
@@ -42,6 +48,19 @@ describe("App", () => {
 
     it("should show jobs' location", () => {
       expect(jobList).toHaveTextContent("Paris");
+    });
+
+    describe("when user clear group by input", () => {
+      beforeEach(() => {
+        const clearGroupResult = within(groupResults).getByRole("button", {
+          name: "Clear",
+        });
+        userEvent.click(clearGroupResult);
+      });
+      it("should display jobs as a flat list", () => {
+        expect(jobList).not.toBeInTheDocument();
+        expect(screen.getAllByRole("section")).toHaveLength(3);
+      });
     });
 
     describe("when user apply to a job", () => {

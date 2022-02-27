@@ -10,7 +10,7 @@ const PageContent: FunctionComponent<PageContentProps> = ({
   children,
 }) => {
   return (
-    <Box display="flex" paddingTop="xl" paddingBottom="xl" w="100%">
+    <Box display="flex" paddingTop="xl" paddingBottom="xl">
       {loading ? (
         <Box
           flex={1}

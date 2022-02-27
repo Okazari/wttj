@@ -1,13 +1,15 @@
 import { useJobs } from "core/jobs";
-import { Box, Field, WuiProvider, theme, SearchInput } from "core/ui";
+import { Box, Field, WuiProvider, theme, SearchInput, Select } from "core/ui";
 import PageContent from "core/ui/PageContent";
 import { FunctionComponent } from "react";
+import GroupedJobList from "./GroupedJobList";
 import JobList from "./JobList";
 
 const AppContainer: FunctionComponent = ({ children }) => (
   <Box
     display="grid"
     gridTemplateRows="min-content 1fr"
+    gridTemplateColumns="1fr"
     padding="xxl"
     h="100vh"
   >
@@ -16,20 +18,46 @@ const AppContainer: FunctionComponent = ({ children }) => (
 );
 
 const App = () => {
-  const { query, setQuery, jobs, loading } = useJobs();
+  const {
+    query,
+    setQuery,
+    jobs,
+    loading,
+    groupedJobsBy,
+    groupJobsBy,
+    groupJobsByOptions,
+  } = useJobs();
   return (
     <WuiProvider theme={theme}>
       <AppContainer>
-        <Field label="Your dream job ?">
-          <SearchInput
-            ariaLabel="search for your dream job"
-            onChange={setQuery}
-            value={query}
-            placeholder="Operations & Strategy, Communications Manager..."
-          />
-        </Field>
+        <Box display="flex">
+          <Box flex={2} marginRight="sm">
+            <Field label="Your dream job ?">
+              <SearchInput
+                ariaLabel="search for your dream job"
+                onChange={setQuery}
+                value={query}
+                placeholder="Operations & Strategy, Communications Manager..."
+              />
+            </Field>
+          </Box>
+          <Box flex={1}>
+            <Field label="Group results by">
+              <Select
+                name="group-by"
+                id="group-by"
+                placeholder="None"
+                value={groupedJobsBy}
+                onChange={groupJobsBy}
+                options={groupJobsByOptions}
+                isClearable
+              />
+            </Field>
+          </Box>
+        </Box>
         <PageContent loading={loading}>
-          <JobList jobs={jobs} />
+          {Array.isArray(jobs) && <JobList jobs={jobs} />}
+          {!Array.isArray(jobs) && <GroupedJobList jobsGroups={jobs} />}
         </PageContent>
       </AppContainer>
     </WuiProvider>
