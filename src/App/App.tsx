@@ -1,9 +1,7 @@
-import { useJobs } from "core/jobs";
+import { useJobs, JobList, GroupedJobList } from "core/jobs";
 import { Box, Field, WuiProvider, theme, SearchInput, Select } from "core/ui";
 import PageContent from "core/ui/PageContent";
 import { FunctionComponent } from "react";
-import GroupedJobList from "./GroupedJobList";
-import JobList from "./JobList";
 
 const AppContainer: FunctionComponent = ({ children }) => (
   <Box

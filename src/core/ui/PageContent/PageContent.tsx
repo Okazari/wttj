@@ -12,15 +12,17 @@ const PageContent: FunctionComponent<PageContentProps> = ({
   return (
     <Box display="flex" paddingTop="xl" paddingBottom="xl">
       {loading ? (
-        <Box
-          flex={1}
-          display="flex"
-          role="status"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Loader size="md" color="primary.500" />
-        </Box>
+        <div data-testid="loader">
+          <Box
+            flex={1}
+            display="flex"
+            role="status"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Loader size="md" color="primary.500" />
+          </Box>
+        </div>
       ) : (
         children
       )}

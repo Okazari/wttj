@@ -12,11 +12,13 @@ const JobList: FunctionComponent<JobListProps> = ({ jobs }) => {
     <Stack dataTestId="job-list" flex={1}>
       {jobs.map((job, index) => (
         <JobRow
-          id={job.id}
+          description={job.description}
           aria-rowindex={index}
           name={job.name}
           type={job.contract_type.en}
           office={job.office.name}
+          profile={job.profile}
+          process={job.recruitment_process}
           applyUrl={getJobApplyUrl(job)}
           key={job.id}
         />

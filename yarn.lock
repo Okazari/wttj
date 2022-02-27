@@ -1033,6 +1033,15 @@
     "@welcome-ui/icons.cross" "^4.0.0-rc.2"
     "@welcome-ui/system" "^4.0.0-rc.2"
 
+"@welcome-ui/close-button@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/close-button/-/close-button-4.0.0-rc.2.tgz#876ad0fb38e0f9d661717aecfc3585197122e7cb"
+  integrity sha512-Iki/pZ6d4pj0aPx+/l+nFXSDDsgKDEt5I5mw0UCw09m9r5xnVFVMiESHX5JehIJk7hjuC3XAbEmKsioVUr4yTg==
+  dependencies:
+    "@welcome-ui/button" "^4.0.0-rc.2"
+    "@welcome-ui/icons.cross" "^4.0.0-rc.2"
+    "@welcome-ui/system" "^4.0.0-rc.2"
+
 "@welcome-ui/core@4.0.0-rc.2":
   version "4.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@welcome-ui/core/-/core-4.0.0-rc.2.tgz#5fc1ee530e61bd1f54f895aca00051e77bd9f143"
@@ -3342,6 +3351,14 @@
     "@welcome-ui/utils" "^4.0.0-rc.0"
     "@welcome-ui/variant-icon" "^4.0.0-rc.2"
 
+"@welcome-ui/link@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/link/-/link-4.0.0-rc.2.tgz#89100f4ceb91ff537c2675095300d046121c5de0"
+  integrity sha512-vAVdQWuSN+OCJ6SxlP3CZd5KoEaenNHGLZk4gYk5XKrgzi/1NyHIG18yRk+45tadE9ZsTYgpSbQ/q9nR1HI8kQ==
+  dependencies:
+    "@welcome-ui/system" "^4.0.0-rc.2"
+    "@welcome-ui/universal-link" "^4.0.0-rc.2"
+
 "@welcome-ui/loader@^4.0.0-rc.2":
   version "4.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@welcome-ui/loader/-/loader-4.0.0-rc.2.tgz#1a803f28cff22d9c3c150bf1bc3195f70d2fad78"
@@ -3350,6 +3367,19 @@
     "@welcome-ui/box" "^4.0.0-rc.2"
     "@welcome-ui/shape" "^4.0.0-rc.2"
     "@welcome-ui/system" "^4.0.0-rc.2"
+
+"@welcome-ui/modal@^4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/modal/-/modal-4.0.0-rc.3.tgz#83cd728d8a80a96ba6e27bbbe4687f84b6827153"
+  integrity sha512-JWiK+GLhWlwRVYZ1FncLggSzuwXpLdLqyM8w7mGNuz5UYUUt+/0SpX2T6+qdNwxKQd0qXuXDHYGoj+0fA0FZBw==
+  dependencies:
+    "@welcome-ui/box" "^4.0.0-rc.2"
+    "@welcome-ui/close-button" "^4.0.0-rc.2"
+    "@welcome-ui/shape" "^4.0.0-rc.2"
+    "@welcome-ui/system" "^4.0.0-rc.2"
+    "@welcome-ui/text" "^4.0.0-rc.3"
+    "@welcome-ui/utils" "^4.0.0-rc.0"
+    reakit "^1.3.6"
 
 "@welcome-ui/select@^4.0.0-rc.2":
   version "4.0.0-rc.2"
@@ -3398,6 +3428,13 @@
   version "4.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/text/-/text-4.0.0-rc.3.tgz#390e8dc2a73edaf12710f66069a3cf8947821db1"
   integrity sha512-PaR5HYPaqSZdfQtkNj77IqREFZPKUW7Vq0fOc1FKCo/3TsmyXJIPwsHGWRhV7Z7Hq4VItcsLXa61IY3zLVT6PQ==
+  dependencies:
+    "@welcome-ui/system" "^4.0.0-rc.2"
+
+"@welcome-ui/universal-link@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/universal-link/-/universal-link-4.0.0-rc.2.tgz#37a0b55dce6bfe11dd581f027ee1c14fd074f853"
+  integrity sha512-G9dbXPqfC7KOvkf0lUBbFdyduZx6m2sIqnmvukbQcYhCwwv+fpMrT5j/vZA3aGqFdECSFOPpMR8JTz6XfP/4JA==
   dependencies:
     "@welcome-ui/system" "^4.0.0-rc.2"
 

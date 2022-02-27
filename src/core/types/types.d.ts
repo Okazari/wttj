@@ -17,6 +17,9 @@ declare type Job = {
   contract_type: Contract;
   office: Office;
   websites_urls: Array<WebsitesUrl>;
+  description: string;
+  profile: string;
+  recruitment_process: string;
 };
 
 declare type Organization = {
