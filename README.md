@@ -27,6 +27,10 @@ This project include the following
 
 Project has been bootstrap using `vite`
 
+This repository is following the `gitflow` organization
+
+Commits are follow the [gitmoji](https://gitmoji.dev/) convention.
+
 #### Standard setup
 
 - `prettier`
@@ -59,4 +63,4 @@ I always makes a 100% coverage, but not only by adding test. Also by removing un
 - Investigate on some typescript types issues.
 - Adds a routing library to both manage modals with a single instance and add deep-linking capabilities to the app (so that if user refresh it will re-open modal).
 - Small visual glitch with the "reveal on scroll" animation when reaching the very end of the list.
-- Deploy app on CleverCloud.
+- Deploy app on CleverCloud on each `main` branch push.
