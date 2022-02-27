@@ -3,7 +3,7 @@ on:
     branches:
       - main
 jobs:
-  Tests:
+  Deploy:
     timeout-minutes: 7
     runs-on: ubuntu-latest
     steps:
@@ -35,4 +35,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: build
+          folder: dist
