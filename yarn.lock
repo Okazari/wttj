@@ -1009,6 +1009,16 @@
     "@welcome-ui/utils" "^4.0.0-rc.0"
     reakit "^1.3.6"
 
+"@welcome-ui/card@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/card/-/card-4.0.0-rc.2.tgz#e05d7cb1339b0ddd591fa573c10ae2e16f683862"
+  integrity sha512-W9GMjTlKh6QDBCCcdqH04SHIZpvXaojhqsSrIbEbZognriyUOcTXVkdOhv1idEcye2QXWT19Zq9NHDGd7bgRXg==
+  dependencies:
+    "@welcome-ui/box" "^4.0.0-rc.2"
+    "@welcome-ui/shape" "^4.0.0-rc.2"
+    "@welcome-ui/system" "^4.0.0-rc.2"
+    "@welcome-ui/utils" "^4.0.0-rc.0"
+
 "@welcome-ui/clear-button@^4.0.0-rc.2":
   version "4.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@welcome-ui/clear-button/-/clear-button-4.0.0-rc.2.tgz#9df9fdf97ee8652bc2c6a2ac91728ad36a07bf35"
@@ -3356,6 +3366,13 @@
   version "4.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@welcome-ui/system/-/system-4.0.0-rc.2.tgz#ad6427036d5d14572bfe481382387b824265c939"
   integrity sha512-pad7L1H8QTHBRaTzV3n3tvbgpM7c3Xp+8LCj/Jp3oZWboX7RPumI2Q/AgdgvtUEfMce6oazp5KbJgzPfpVXNfQ==
+
+"@welcome-ui/text@^4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/text/-/text-4.0.0-rc.3.tgz#390e8dc2a73edaf12710f66069a3cf8947821db1"
+  integrity sha512-PaR5HYPaqSZdfQtkNj77IqREFZPKUW7Vq0fOc1FKCo/3TsmyXJIPwsHGWRhV7Z7Hq4VItcsLXa61IY3zLVT6PQ==
+  dependencies:
+    "@welcome-ui/system" "^4.0.0-rc.2"
 
 "@welcome-ui/utils@^4.0.0-rc.0":
   version "4.0.0-rc.0"

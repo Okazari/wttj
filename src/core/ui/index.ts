@@ -6,5 +6,8 @@ export { Field } from "@welcome-ui/field";
 export { SearchIcon } from "@welcome-ui/icons.search";
 export { Stack } from "@welcome-ui/stack";
 export { Loader } from "@welcome-ui/loader";
+export { Text } from "@welcome-ui/text";
+export { Card } from "@welcome-ui/card";
+export { Button } from "@welcome-ui/button";
 export { default as SearchInput } from "./SearchInput";
 export const theme = createTheme();

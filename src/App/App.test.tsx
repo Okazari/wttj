@@ -19,13 +19,14 @@ describe("App", () => {
 
   describe("when app is loaded", () => {
     let jobList: HTMLElement;
+    let jobs: Array<HTMLElement>;
     beforeEach(async () => {
       await waitForElementToBeRemoved(() => screen.getByRole("status"));
       jobList = screen.getByTestId("job-list");
+      jobs = within(jobList).getAllByRole("section");
     });
     it("should show a list of jobs", () => {
-      const sections = within(jobList).getAllByRole("section");
-      expect(sections).toHaveLength(3);
+      expect(jobs).toHaveLength(3);
     });
 
     it("should show jobs' names", () => {
@@ -41,6 +42,21 @@ describe("App", () => {
 
     it("should show jobs' location", () => {
       expect(jobList).toHaveTextContent("Paris");
+    });
+
+    describe("when user apply to a job", () => {
+      let applyBtn: HTMLElement;
+      beforeEach(() => {
+        const jobToApply = jobs[0];
+        applyBtn = within(jobToApply).getByText("Apply");
+      });
+      it("should open job page in new tab", () => {
+        expect(applyBtn).toHaveAttribute(
+          "href",
+          "https://www.welcometothejungle.com/companies/wttj/jobs/communications-manager_paris"
+        );
+        expect(applyBtn).toHaveAttribute("target", "_blank");
+      });
     });
 
     describe("when user search for a job", () => {

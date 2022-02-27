@@ -1,6 +1,7 @@
+import { getJobApplyUrl } from "core/jobs";
 import { Stack } from "core/ui";
 import { FunctionComponent } from "react";
-import JobCard from "./JobCard";
+import JobRow from "./JobRow";
 
 interface JobListProps {
   jobs: Array<Job>;
@@ -8,14 +9,15 @@ interface JobListProps {
 
 const JobList: FunctionComponent<JobListProps> = ({ jobs }) => {
   return (
-    <Stack as="ul" dataTestId="job-list">
+    <Stack dataTestId="job-list" flex={1}>
       {jobs.map((job, index) => (
-        <JobCard
+        <JobRow
           id={job.id}
           aria-rowindex={index}
           name={job.name}
           type={job.contract_type.en}
           office={job.office.name}
+          applyUrl={getJobApplyUrl(job)}
           key={job.id}
         />
       ))}
