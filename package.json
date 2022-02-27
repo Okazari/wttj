@@ -28,6 +28,7 @@
     "@welcome-ui/text": "^4.0.0-rc.3",
     "@xstyled/styled-components": "^3.5.1",
     "@xstyled/system": "^3.5.1",
+    "aos": "^2.3.4",
     "fast-fuzzy": "^1.11.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",

@@ -22,3 +22,5 @@ declare type Job = {
 declare type Organization = {
   jobs: Array<Job>;
 };
+
+declare module "aos";
