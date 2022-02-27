@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - dev
+      - main
 jobs:
   Tests:
     timeout-minutes: 7
@@ -28,3 +28,11 @@ jobs:
       - name: Test
         run: |
           yarn test:ci
+      - name: Build
+        run: |
+          yarn build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: build
