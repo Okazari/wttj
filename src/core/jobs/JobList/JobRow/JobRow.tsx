@@ -1,11 +1,14 @@
 import { Stack, Text, Card, Button } from "core/ui";
+import JobDetailModal from "../../JobDetailModal";
 import { FunctionComponent } from "react";
 interface JobRowProps {
   name: string;
   type: string;
   office: string;
   applyUrl: string;
-  id: number;
+  description: string;
+  profile: string;
+  process: string;
 }
 
 const JobRow: FunctionComponent<JobRowProps> = ({
@@ -13,6 +16,9 @@ const JobRow: FunctionComponent<JobRowProps> = ({
   type,
   office,
   applyUrl,
+  description,
+  profile,
+  process,
 }) => {
   return (
     <div data-aos="fade-up" data-aos-duration="200" data-aos-offset="0">
@@ -33,6 +39,17 @@ const JobRow: FunctionComponent<JobRowProps> = ({
               <Text variant="body1" as="span">
                 {office}
               </Text>
+              <JobDetailModal
+                name={name}
+                office={office}
+                type={type}
+                applyUrl={applyUrl}
+                description={description}
+                profile={profile}
+                process={process}
+              >
+                See more...
+              </JobDetailModal>
             </Stack>
             <Button as="a" href={applyUrl} target="_blank">
               Apply

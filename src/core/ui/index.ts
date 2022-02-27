@@ -10,5 +10,7 @@ export { Text } from "@welcome-ui/text";
 export { Card } from "@welcome-ui/card";
 export { Button } from "@welcome-ui/button";
 export { Select } from "@welcome-ui/select";
+export { Link } from "@welcome-ui/link";
+export { Modal, useModalState } from "@welcome-ui/modal";
 export { default as SearchInput } from "./SearchInput";
 export const theme = createTheme();
